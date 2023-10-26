@@ -1,0 +1,48 @@
+﻿@model RentaCar 
+<form method="post">
+    <h1 style="text-align:center"> <br> </br>Renting a car </h1>
+    <div class="mb-3">
+        <label asp-for="CarId"></label>
+        <select asp-for="CarId" class="form-control">
+            <option value="">--Select a car--</option>
+            @if (ViewBag.Cars != null)
+            {
+                @foreach (var car in ViewBag.Cars)
+                {
+                    <option value="@car.id">@car.Brand @car.Model -- (ID: @car.id) -- (Price: @car.PricePerDAY)</option>
+                }
+            }
+        </select>
+        <span asp-validation-for="CarId" class="text-bg-danger"></span>
+        <br />
+        <div class="mb-3">
+            <label asp-for="CustomerId"></label>
+            <select asp-for="CustomerId" class="form-control">
+                <option value="">--Select a customer--</option>
+                @if (ViewBag.Customers != null)
+                {
+                    @foreach (var customer in ViewBag.Customers)
+                    {
+                        <option value="@customer.id">@customer.name @customer.surname (ID: @customer.id)</option>
+                    }
+                }
+            </select>
+            <span asp-validation-for="CustomerId" class="text-bg-danger"></span>
+            <br />
+            <div class="mb-3">
+                <label asp-for="StartDate"></label>
+                <input asp-for="StartDate" class="form-control" />
+            </div><span asp-validation-for="StartDate" class="text-bg-danger"></span>
+            <div class="mb-3">
+                <label asp-for="EndDate"></label>
+                <input asp-for="EndDate" class="form-control" />
+            </div> <span asp-validation-for="EndDate" class="text-bg-danger"></span>
+        </div>
+        <h2 style="font-size: 18px;">PS : you cannot edit the renter nor the car after the car is rented,You may only extend the duration of the reservation !</h2>
+
+        <button type="submit" class="btn btn-outline-secondary" style="width:100px">Add</button>
+        <a asp-controller="RentaCar" asp-action="Index" class="btn btn-outline-light" style="text-align:right">Back to the list</a>
+</form>
+
+
+

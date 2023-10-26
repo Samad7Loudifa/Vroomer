@@ -1,0 +1,33 @@
+﻿
+@model Vroomer.Models.RentaCar
+
+<form method="post">
+    <h1 style="text-align:center"> <br> </br>Edit a reservastion</h1>
+    <div class="mb-3">
+            @*<label asp-for="RentalId"></label>*@
+            <input asp-for="RentalId" class="form-control" hidden />
+        </div>
+    <div class="mb-3">
+        @*<label asp-for="CarId"></label>*@
+        <input asp-for="CarId" class="form-control"hidden />
+        <span asp-validation-for="CarId" class="text-bg-danger"></span>
+
+    </div>
+    <div class="mb-3">
+        @*<label asp-for="CustomerId"></label>*@
+        <input asp-for="CustomerId" class="form-control" hidden/>
+        <span asp-validation-for="CustomerId" class="text-bg-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="StartDate"></label>
+        <input asp-for="StartDate" class="form-control"  />
+        <span asp-validation-for="StartDate" class="text-bg-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EndDate"></label>
+        <input asp-for="EndDate" class="form-control" />
+        <span asp-validation-for="EndDate" class="text-bg-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-outline-secondary" style="text-align:center; width:100px">Update</button>
+    <a asp-controller="RentaCar" asp-action="Index" class="btn btn-outline-light" style="text-align:right">Back to the list</a>
+</form>

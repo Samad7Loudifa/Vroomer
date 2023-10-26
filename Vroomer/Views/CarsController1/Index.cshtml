@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Car>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1 style="text-align :center"><br></br> Our car inventory </h1>
+<h2 style="text-align :center"><br></br> </h2>
+
+<div class=" = container p-4">
+    <div class="row pt-4">
+        <a asp-controller="CarsController1" asp-action="Create" class="btn btn-outline-success">Add a new Car</a>
+    </div>
+</div>
+<table class="table table-bordered table-striped " style="width:100%">
+<thead>
+    <tr class="table-secondary">
+        <th>
+            Car id
+        </th>
+        <th>
+            Car name
+        </th>
+        <th>
+            Car model
+        </th>
+        <th>
+            Price per day in USD
+        </th>
+        <th>
+
+        </th>
+    </tr>
+</thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr class="table-dark">
+            <td>
+                @item.id
+            </td>
+            <td>
+                @item.Brand
+            </td>
+            <td>
+                @item.Model
+            </td>
+            <td>
+                @item.PricePerDAY
+            </td>
+            <td style="width: 1%;">
+                <div class="btn-group ml-auto" role="group" style="padding-right: 15px;">
+                        <a class="btn btn-outline-danger -0 mx-2" asp-controller="CarsController1" asp-action="Delete" asp-route-ID="@item.id">Delete</a>
+                        <a class="btn btn-outline-light order-1 mx-2" asp-controller="CarsController1" asp-action="Edit" asp-route-ID="@item.id">Modify</a>
+                </div>
+            </td>
+            @*<td style="width: 1%;">
+                <div class="btn-group ml-auto" role="group" style="padding-right: 15px;">
+                    <a class="btn btn-light mx-2" asp-controller="CarsController1" asp-action="Delete" asp-route-ID="@item.id">Delete</a>
+                </div>
+            </td>*@
+
+        </tr>
+        }
+    </tbody>
+</table>

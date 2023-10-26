@@ -1,0 +1,81 @@
+﻿<style>
+    .card {
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 5px 5px 15px rgba(128, 0, 128, 0.3);
+        border-radius: 15px; /* Adding border-radius to round the edges of the card */
+    }
+
+    .card-icon {
+        font-size: 3rem; /* Adjust the icon size */
+    }
+
+    .card-header {
+        border-top-left-radius: 15px; /* Round the top-left corner of the card header */
+        border-top-right-radius: 15px; /* Round the top-right corner of the card header */
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 70%; /* Adjust the card height */
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 10px 10px 20px rgba(128, 0, 128, 0.5);
+    }
+</style>
+
+<div class="text-center" style="padding-top: 60px;" >
+    <br />
+    <br />
+    <h1 class="display-4" style="font-family: 'YourCustomFont' , serif;">VROOMER</h1>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="card mx-2" style="width: 12rem; border-radius: 15px;">
+            <span class="card-icon text-primary">
+                <i class="bi bi-car-front"></i> <!-- car Icon -->
+            </span>
+            <div class="card-body">
+                <h5 class="card-title">Car Inventory</h5>
+                <p class="card-text">Explore our extensive car inventory.</p>
+                <a href="/CarsController1/Index" class="btn btn-primary">Go to Cars</a>
+            </div>
+        </div>
+        <div class="card mx-2" style="width: 12rem; border-radius: 15px;">
+            <span class="card-icon text-primary">
+                <i class="bi bi-person"></i> <!-- Person Icon -->
+            </span>
+            <div class="card-body">
+                <h5 class="card-title">Customers</h5>
+                <p class="card-text">Get to know our valued customers.</p>
+                <a href="/Customer/Index" class="btn btn-primary">Go to Customers</a>
+            </div>
+        </div>
+        <div class="card mx-2" style="width: 12rem; border-radius: 15px;">
+            <span class="card-icon text-primary">
+                <i class="bi bi-key"></i> <!-- Key Icon -->
+            </span>
+            <div class="card-body">
+                <h5 class="card-title">Rentals</h5>
+                <p class="card-text">View our latest car rentals.</p>
+                <a href="/RentaCar/Index" class="btn btn-primary">Go to Rentals</a>
+            </div>
+        </div>
+        @*<div class="card mx-2" style="width: 12rem; border-radius: 15px;">
+                <span class="card-icon text-primary">
+                    <i class="bi bi-cash"></i> <!-- Cash Icon -->
+                </span>
+                <div class="card-body">
+                    <h5 class="card-title">Income</h5>
+                    <p class="card-text">Explore our income records.</p>
+                    <a href="/RentaCar/Income" class="btn btn-primary">Go to Income</a>
+                </div>
+            </div>*@
+    </div>
+
+</div>

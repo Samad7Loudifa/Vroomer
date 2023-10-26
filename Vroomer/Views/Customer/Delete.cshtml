@@ -1,0 +1,26 @@
+﻿@model Customer
+<form method="post" asp-action="DeleteAcustomer">
+    <h1 style="text-align:center"> <br> </br>Are you sure you want to delete this customer ?</h1>
+    <input asp-for="id" hidden />
+    @*<div class="mb-3">
+            <label asp-for="id"></label>
+            <input asp-for="id" class="form-control" />
+        </div>*@
+    @*<div class="mb-3">
+            <label asp-for="Brand"></label>
+            <input asp-for="Brand" class="form-control" />
+            <span asp-validation-for="Brand" class="text-bg-danger"></span>
+
+        </div>
+            <div class="mb-3">
+                <label asp-for="Model"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-bg-danger"></span>
+            </div>*@
+    <br />
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-outline-danger" style="width:100px">Delete</button>
+        <a asp-controller="Customer" asp-action="Index" class="btn btn-outline-light" style="text-align:right">Back to the list</a>
+    </div>
+
+</form>

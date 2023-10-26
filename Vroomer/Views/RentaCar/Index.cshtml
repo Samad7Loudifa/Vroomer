@@ -1,0 +1,93 @@
+﻿@model IEnumerable<RentaCar>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+// Set the maximum duration to 30 days
+//int maxDuration = 30;
+}
+
+<h1 style="text-align :center"><br></br>Currently rented cars </h1>
+
+<div class="container p-4">
+    <div class="row pt-4">
+        <a asp-controller="RentaCar" asp-action="Create" class="btn btn-outline-success">
+            RENT A CAR
+        </a>
+    </div>
+</div>
+<table class="table table-bordered table-striped " style="width:100%">
+
+    <thead>
+        <tr class="table-secondary">
+            <th>
+                Rental ID
+            </th>
+            <th>
+                Customer ID
+            </th>
+            <th>
+                Car ID
+            </th>
+            <th>
+                Start Date
+            </th>
+            <th>
+                End Date
+            </th>
+            <th>
+                Total in $
+            </th>
+            @*<th>
+                Duration
+            </th>*@
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            //// Calculate the duration of the rental in days
+            //int duration = (item.EndDate - item.StartDate).Days;
+            //// Calculate the percentage of the rental duration relative to the maximum duration
+            //int progress = (int)((double)duration / maxDuration * 100);
+
+            <tr class="table-dark">
+                <td>
+                    @item.RentalId 
+                </td>
+                <td>
+                    @item.CustomerId
+                </td>
+                <td>
+                    @item.CarId
+                </td>
+                <td>
+                    @item.StartDate
+                </td>
+                <td>
+                    @item.EndDate
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                @*<td>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="@progress" aria-valuemin="0" aria-valuemax="100" style="width: @progress%;"></div>
+                    </div>
+                </td>*@
+                <td style="width: 1%;">
+                    <div class="btn-group ml-auto" role="group" style="padding-right: 15px;">
+                        <a class="btn btn-outline-danger -0 mx-2" asp-controller="RentaCar" asp-action="Delete" asp-route-ID="@item.RentalId">Delete</a>
+                        <a class="btn btn-outline-light order-1 mx-2" asp-controller="RentaCar" asp-action="Edit" asp-route-ID="@item.RentalId">Modify</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

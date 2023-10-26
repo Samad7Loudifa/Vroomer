@@ -1,0 +1,30 @@
+﻿@{
+    var incomeByMonth = ViewBag.IncomeByMonth as List<dynamic>;
+}
+
+@if (ViewBag.IncomeByMonth != null)
+{
+    <p>ViewBag.IncomeByMonth has data.</p>
+}
+
+@if (incomeByMonth != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Total Income</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in incomeByMonth)
+            {
+                <tr>
+                    <td>@item.Month</td>
+                    <td>@item.TotalIncome</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
